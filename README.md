@@ -1,12 +1,18 @@
 # Play Nine
-This project is a simple game that utilizes react.
+This project is a simple game that utilizes react and was built using a TDD approach.
 
 More details to follow as the project progresses.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Packages used
 
+* react
+* react dom
+* react-scripts
+* enzyme
+* enzyme-adapter-react-16
 
 ## Available Scripts
 
