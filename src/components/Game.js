@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Stars from './Stars';
 
 class Game extends Component {
 
@@ -6,6 +7,7 @@ class Game extends Component {
     return (
       <div>
         <h3 id="heading">Play Nine</h3>
+        <Stars />
       </div>
     )
   }
