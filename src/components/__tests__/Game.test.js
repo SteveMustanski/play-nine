@@ -12,6 +12,11 @@ describe('Game', function () {
     shallow(<Game />);
   });
 
+  it('displays a container component', function () {
+    const container = mountedGame.find('Container');
+    expect(container.length).toBe(1);
+  })
+
   it('displays the game heading', () => {
     const GameHeading = mountedGame.find('#heading');
     expect(GameHeading.text()).toEqual('Play Nine');

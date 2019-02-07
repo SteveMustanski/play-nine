@@ -13,6 +13,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * react-scripts
 * enzyme
 * enzyme-adapter-react-16
+* font-awesome
+* bootstrap
+* reactstrap
 
 ## Available Scripts
 
