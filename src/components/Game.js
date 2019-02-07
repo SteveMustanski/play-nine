@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Stars from './Stars';
 import Button from './Button';
 import Answer from './Answer';
+import Numbers from './Numbers';
 import { Container } from 'reactstrap';
 
 class Game extends Component {
@@ -15,6 +16,7 @@ class Game extends Component {
           <Button />
           <Answer />
         </Container>
+        <Numbers />
       </div>
     )
   }
