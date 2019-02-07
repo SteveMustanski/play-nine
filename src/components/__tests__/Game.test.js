@@ -31,4 +31,18 @@ describe('Game', function () {
     const button = mountedGame.find('Button');
     expect(button.length).toBe(1);
   })
+
+  it('displays the Answer component', () => {
+    const answer = mountedGame.find('Answer');
+    expect(answer.length).toBe(1);
+  })
+  it('displays some components in a row', () => {
+    const row = mountedGame.find('.row');
+    expect(row.length).toBe(1);
+  })
+
+  it('displays the Numbers component', () => {
+    const numbers = mountedGame.find('Numbers');
+    expect(numbers.length).toBe(1);
+  })
 })
