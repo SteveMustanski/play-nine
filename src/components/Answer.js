@@ -4,7 +4,7 @@ class Answer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="col-5">
         Answer
       </div>
     )

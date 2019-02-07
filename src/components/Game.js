@@ -9,15 +9,15 @@ class Game extends Component {
 
   render() {
     return (
-      <div className='row'>
-        <Container>
-          <h3 id="heading">Play Nine</h3>
+      <Container>
+        <h3 id="heading">Play Nine</h3>
+        <div className='row'>
           <Stars />
           <Button />
           <Answer />
-        </Container>
+        </div>
         <Numbers />
-      </div>
+      </Container>
     )
   }
 }

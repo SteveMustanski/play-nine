@@ -4,7 +4,7 @@ class Button extends Component {
 
   render() {
     return (
-      <div>
+      <div className='col-2'>
         <button>=</button>
       </div>
     )
