@@ -26,4 +26,9 @@ describe('Game', function () {
       const headers = mountedGame.find('Stars');
       expect(headers.length).toBe(1);
     });
+
+  it('displays a button component', () => {
+    const button = mountedGame.find('Button');
+    expect(button.length).toBe(1);
+  })
 })

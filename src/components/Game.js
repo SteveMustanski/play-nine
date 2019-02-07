@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Stars from './Stars';
+import Button from './Button';
 import {Container} from 'reactstrap';
 
 class Game extends Component {
@@ -9,6 +10,7 @@ class Game extends Component {
       <Container>
         <h3 id="heading">Play Nine</h3>
         <Stars />
+        <Button />
       </Container>
     )
   }
