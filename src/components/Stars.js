@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Stars extends Component {
 
-  render() {
+const Stars = ()  => {
+
+  const numberOfStars = Math.floor(Math.random() * 9) + 1;
+  
+  let stars = [];
+  for (let i = 0; i < numberOfStars; i++ ) {
+    stars.push(<i key={i} className="fa fa-star"></i>)
+  }
+
     return (
       <div className="col-5">
-        Stars
+        {stars}
       </div>
     )
-  }
 }
 
 export default Stars;
