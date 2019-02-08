@@ -25,4 +25,9 @@ describe('Stars', function () {
     expect(textCenter.length).toBe(1);
   })
 
+  it('numbers spans should have the .pic-num class', () => {
+    const numbers =mountedNumbers.find('.pic-num');
+    expect(numbers.length).toBeGreaterThanOrEqual(1);
+  })
+
 })

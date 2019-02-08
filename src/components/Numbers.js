@@ -7,7 +7,7 @@ class Numbers extends Component {
       <div className='card text-center'>
         <div>
           {Numbers.list.map((number, i) =>
-            <span key={i}>{number}</span>)}
+            <span className="pic-num" key={i}>{number}</span>)}
         </div>
 
       </div>
