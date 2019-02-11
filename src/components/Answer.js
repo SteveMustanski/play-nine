@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Answer extends Component {
-
-  render() {
-    return (
-      <div className="col-5">
-        Answer
-      </div>
-    )
-  }
+const Answer = (props) => {
+  return (
+    <div className="col-5">
+      {props.selectedNumbers.map((number, i) => 
+        <span className="pic-num" key={i}>{number}</span>
+      )}
+    </div>
+  )
 }
 
 export default Answer;

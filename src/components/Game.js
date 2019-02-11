@@ -7,6 +7,10 @@ import { Container } from 'reactstrap';
 
 class Game extends Component {
 
+  state = {
+    selectedNumbers: [2, 4]
+  }
+
   render() {
     return (
       <Container>
@@ -14,7 +18,7 @@ class Game extends Component {
         <div className='row'>
           <Stars />
           <Button />
-          <Answer />
+          <Answer selectedNumbers = {this.state.selectedNumbers} />
         </div>
         <Numbers />
       </Container>
