@@ -16,12 +16,14 @@ class Game extends Component {
     }))
   }
 
+ numberOfStars = Math.floor(Math.random() * 9) + 1;
+
   render() {
     return (
       <Container>
         <h3 id="heading">Play Nine</h3>
         <div className='row'>
-          <Stars />
+          <Stars numberOfStars={this.numberOfStars}/>
           <Button />
           <Answer selectedNumbers={this.state.selectedNumbers} />
         </div>
