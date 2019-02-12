@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+const Button = (props)  =>  {
 
-class Button extends Component {
-
-  render() {
     return (
       <div className='col-2'>
-        <button>=</button>
+        <button className='btn btn-secondary' disabled={props.selectedNumbers.length === 0}>=</button>
       </div>
     )
   }
-}
 
 export default Button;

@@ -9,7 +9,7 @@ const Numbers = (props) => {
   }
 
     return (
-      <div className='card text-center'>
+      <div className='card text-center num-list'>
         <div>
           {Numbers.list.map((number, i) =>
             <span className={numberClassName(number)} key={i}

@@ -24,18 +24,19 @@ class Game extends Component {
     }));
   }
   render() {
+    const {selectedNumbers, numberOfStars} = this.state;
     return (
       <Container>
         <h3 id="heading">Play Nine</h3>
         <div className='row'>
-          <Stars numberOfStars={this.state.numberOfStars}/>
-          <Button />
+          <Stars numberOfStars={numberOfStars}/>
+          <Button selectedNumbers={selectedNumbers}/>
           <Answer 
-          selectedNumbers={this.state.selectedNumbers}
+          selectedNumbers={selectedNumbers}
           unselectNumber={this.unselectNumber} />
         </div>
         <Numbers
-          selectedNumbers={this.state.selectedNumbers}
+          selectedNumbers={selectedNumbers}
           selectNumber={this.selectNumber}
         />
       </Container>
