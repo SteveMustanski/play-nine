@@ -8,7 +8,12 @@ import { Container } from 'reactstrap';
 class Game extends Component {
 
   state = {
-    selectedNumbers: [2, 4]
+    selectedNumbers: []
+  }
+  selectNumber = (clickedNumber) => {
+    this.setState(prevState => ({
+      selectedNumbers: prevState.selectedNumbers.concat(clickedNumber)
+    }))
   }
 
   render() {
@@ -18,9 +23,12 @@ class Game extends Component {
         <div className='row'>
           <Stars />
           <Button />
-          <Answer selectedNumbers = {this.state.selectedNumbers} />
+          <Answer selectedNumbers={this.state.selectedNumbers} />
         </div>
-        <Numbers />
+        <Numbers
+          selectedNumbers={this.state.selectedNumbers}
+          selectNumber={this.selectNumber}
+        />
       </Container>
     )
   }

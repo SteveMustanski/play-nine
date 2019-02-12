@@ -13,7 +13,7 @@ code {
     monospace;
 }
 
-.pic-num {
+span {
   display: inline-block;
   margin: 0.5em;
   text-align: center;
@@ -21,5 +21,11 @@ code {
   width: 24px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.selected {
+  background-color: #eee;
+  color: #ddd;
+  cursor: not-allowed
 }
 
