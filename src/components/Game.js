@@ -8,7 +8,8 @@ import { Container } from 'reactstrap';
 class Game extends Component {
 
   state = {
-    selectedNumbers: []
+    selectedNumbers: [],
+    numberOfStars: Math.floor(Math.random() * 9) + 1
   }
   selectNumber = (clickedNumber) => {
     this.setState(prevState => ({
@@ -16,14 +17,12 @@ class Game extends Component {
     }))
   }
 
- numberOfStars = Math.floor(Math.random() * 9) + 1;
-
   render() {
     return (
       <Container>
         <h3 id="heading">Play Nine</h3>
         <div className='row'>
-          <Stars numberOfStars={this.numberOfStars}/>
+          <Stars numberOfStars={this.state.numberOfStars}/>
           <Button />
           <Answer selectedNumbers={this.state.selectedNumbers} />
         </div>
