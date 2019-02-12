@@ -12,6 +12,7 @@ class Game extends Component {
     numberOfStars: Math.floor(Math.random() * 9) + 1
   }
   selectNumber = (clickedNumber) => {
+    if(this.state.selectedNumbers.indexOf(clickedNumber) >= 0) {return};
     this.setState(prevState => ({
       selectedNumbers: prevState.selectedNumbers.concat(clickedNumber)
     }))
