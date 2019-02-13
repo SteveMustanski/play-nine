@@ -43,6 +43,14 @@ class Game extends Component {
       numberOfStars: Math.floor(Math.random() * 9) + 1
     }))
   }
+
+  redraw = () => {
+    this.setState({
+      numberOfStars: Math.floor(Math.random() * 9) + 1,
+      answerIsCorrect: null,
+      selectedNumbers: []
+    })
+  }
   render() {
     const { selectedNumbers, numberOfStars, answerIsCorrect, usedNumbers} = this.state;
     return (
@@ -55,6 +63,7 @@ class Game extends Component {
             checkAnswer={this.checkAnswer}
             answerIsCorrect={answerIsCorrect}
             acceptAnswer={this.acceptAnswer}
+            redraw={this.redraw}
             
           />
           <Answer
