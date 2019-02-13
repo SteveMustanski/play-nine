@@ -45,4 +45,9 @@ describe('Game', function () {
     const numbers = mountedGame.find('Numbers');
     expect(numbers.length).toBe(1);
   })
+
+  it('displays the DoneFrame component', () => {
+    const done = mountedGame.find('DoneFrame');
+    expect(done.length).toBe(1);
+  })
 })

@@ -3,6 +3,7 @@ import Stars from './Stars';
 import Button from './Button';
 import Answer from './Answer';
 import Numbers from './Numbers';
+import DoneFrame from './DoneFrame';
 import { Container } from 'reactstrap';
 
 class Game extends Component {
@@ -12,7 +13,8 @@ class Game extends Component {
     numberOfStars: Math.floor(Math.random() * 9) + 1,
     usedNumbers: [],
     answerIsCorrect: null,
-    redraws: 5
+    redraws: 5,
+    doneStatus: null
   }
   selectNumber = (clickedNumber) => {
     if (this.state.selectedNumbers.indexOf(clickedNumber) >= 0) { return };
@@ -60,7 +62,8 @@ class Game extends Component {
       numberOfStars,
       answerIsCorrect,
       usedNumbers,
-      redraws
+      redraws,
+      doneStatus
     } = this.state;
     return (
       <Container>
@@ -80,11 +83,17 @@ class Game extends Component {
             selectedNumbers={selectedNumbers}
             unselectNumber={this.unselectNumber} />
         </div>
+        <br />
+        {doneStatus ? 
+        <DoneFrame doneStatus={doneStatus}/> :
         <Numbers
           selectedNumbers={selectedNumbers}
           selectNumber={this.selectNumber}
           usedNumbers={usedNumbers}
         />
+
+        
+        }
       </Container>
     )
   }
