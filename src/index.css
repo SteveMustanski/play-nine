@@ -33,3 +33,9 @@ span {
   cursor: not-allowed
 }
 
+.used {
+  background-color: lightgreen;
+  color: #ddd;
+  cursor: not-allowed
+}
+
