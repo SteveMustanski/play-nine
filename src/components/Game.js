@@ -26,14 +26,19 @@ const possibleCombinationSum = function(arr, n) {
 };
 
 class Game extends Component {
+initialState = () => ({
+  selectedNumbers: [],
+  numberOfStars: Math.floor(Math.random() * 9) + 1,
+  usedNumbers: [],
+  answerIsCorrect: null,
+  redraws: 5,
+  doneStatus: null,
+});
 
-  state = {
-    selectedNumbers: [],
-    numberOfStars: Math.floor(Math.random() * 9) + 1,
-    usedNumbers: [],
-    answerIsCorrect: null,
-    redraws: 5,
-    doneStatus: null
+  state = this.initialState();
+
+  resetGame = () => {
+    this.setState(this.initialState());
   }
   selectNumber = (clickedNumber) => {
     if (this.state.selectedNumbers.indexOf(clickedNumber) >= 0) { return };
@@ -104,7 +109,7 @@ possibleCombinationSum = (arr, n) => {
 
   updateDoneStatus = () => {
     this.setState(prevState => {
-      if(prevState.length === 9 ) {
+      if(prevState.usedNumbers.length === 9 ) {
         return {doneStatus: 'You Win!'}
       }
       if(prevState.redraws === 0 && !this.possibleSolutions(prevState) ){
@@ -142,7 +147,9 @@ possibleCombinationSum = (arr, n) => {
         </div>
         <br />
         {doneStatus ? 
-        <DoneFrame doneStatus={doneStatus}/> :
+        <DoneFrame
+        resetGame={this.resetGame}
+        doneStatus={doneStatus}/> :
         <Numbers
           selectedNumbers={selectedNumbers}
           selectNumber={this.selectNumber}
