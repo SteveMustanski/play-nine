@@ -18,6 +18,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * reactstrap
 * lodash
 
+## Game Play
+The game has the user select numbers 1 through 9 to match the number of stars shows.  Once a number or numbers has been chosen, they can not be used again.
+
+Each time the user correctly adds up numbers to match the number of stars, a new set of stars is added.
+
+If the user doesn't have a combination left that will equal the number of stars, they can select the refresh button to generate a new amount of stars.  The user has 5 refreshes available.
+
+If the user has uses all the numbers while still having refreshes, they win.  If they are out of refreshes and the available numbers can't equal the number of stars shown, the game is over.
+
+## Installing the game
+If you want to install and run this game locally, you can clone this repo.
+
+Once the repo is cloned, run `yarn i` to install all the packages.
+
+Run `yarn start` to start the game.
+
 ## Available Scripts
 
 In the project directory, you can run:
