@@ -5,6 +5,25 @@ import Answer from './Answer';
 import Numbers from './Numbers';
 import DoneFrame from './DoneFrame';
 import { Container } from 'reactstrap';
+import _ from 'lodash';
+
+const possibleCombinationSum = function(arr, n) {
+  if (arr.indexOf(n) >= 0) { return true; }
+  if (arr[0] > n) { return false; }
+  if (arr[arr.length - 1] > n) {
+    arr.pop();
+    return possibleCombinationSum(arr, n);
+  }
+  var listSize = arr.length, combinationsCount = (1 << listSize)
+  for (var i = 1; i < combinationsCount ; i++ ) {
+    var combinationSum = 0;
+    for (var j=0 ; j < listSize ; j++) {
+      if (i & (1 << j)) { combinationSum += arr[j]; }
+    }
+    if (n === combinationSum) { return true; }
+  }
+  return false;
+};
 
 class Game extends Component {
 
@@ -44,7 +63,7 @@ class Game extends Component {
       selectedNumbers: [],
       answerIsCorrect: null,
       numberOfStars: Math.floor(Math.random() * 9) + 1
-    }))
+    }), this.updateDoneStatus)
   }
 
   redraw = () => {
@@ -54,8 +73,46 @@ class Game extends Component {
       answerIsCorrect: null,
       selectedNumbers: [],
       redraws: prevState.redraws - 1
-    }))
+    }), this.updateDoneStatus)
   }
+
+
+possibleCombinationSum = (arr, n) => {
+  if (arr.indexOf(n) >= 0) { return true; }
+  if (arr[0] > n) { return false; }
+  if (arr[arr.length - 1] > n) {
+    arr.pop();
+    return possibleCombinationSum(arr, n);
+  }
+  var listSize = arr.length, combinationsCount = (1 << listSize)
+  for (var i = 1; i < combinationsCount ; i++ ) {
+    var combinationSum = 0;
+    for (var j=0 ; j < listSize ; j++) {
+      if (i & (1 << j)) { combinationSum += arr[j]; }
+    }
+    if (n === combinationSum) { return true; }
+  }
+  return false;
+};
+
+  possibleSolutions = ({numberOfStars, usedNumbers}) => {
+    const posibleNumbers = _.range(1, 10).filter(number => 
+        usedNumbers.indexOf(number) === -1
+      )
+      return possibleCombinationSum(posibleNumbers, numberOfStars);
+  }
+
+  updateDoneStatus = () => {
+    this.setState(prevState => {
+      if(prevState.length === 9 ) {
+        return {doneStatus: 'You Win!'}
+      }
+      if(prevState.redraws === 0 && !this.possibleSolutions(prevState) ){
+        return {doneStatus: 'Game Over!'}
+      }
+    })
+  }
+
   render() {
     const {
       selectedNumbers,
